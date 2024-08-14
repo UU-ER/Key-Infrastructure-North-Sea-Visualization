@@ -8,6 +8,10 @@ st.set_page_config(
     page_title="Visualize Single Result",
 )
 
+# Load Data
+if not st.session_state['Result1']:
+    load_data_in_cash()
+
 # Show cash status
 st.sidebar.markdown('**Cash Status**')
 show_sidebar()
@@ -33,8 +37,6 @@ if st.session_state['Result1']:
     elif selected_page == "Network Operation":
         plot_network_operation()
 
-else:
-    st.markdown("Please load in data first")
 
 
 

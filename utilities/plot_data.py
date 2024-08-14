@@ -52,6 +52,7 @@ def plot_technology_design():
     Plots the technology design
     """
     data = st.session_state['Result1']['technology_design']
+    st.table(data)
     data = data[data['Variable']!= 'technology']
 
     with st.form('PlottingOptions'):
@@ -208,7 +209,6 @@ def plot_network_design():
         variables_available.remove("ToNode")
 
         selected_variable = st.selectbox('Select a variable:', variables_available)
-
         submitted = st.form_submit_button('Plot')
 
         if submitted:
