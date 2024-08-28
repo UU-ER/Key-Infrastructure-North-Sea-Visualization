@@ -28,7 +28,6 @@ def clear_cash():
     """
     if st.sidebar.button('Reset data'):
         st.session_state['Result1'] = {}
-        st.session_state['NodeLocations'] = None
 
 def load_data_in_cash():
     """
