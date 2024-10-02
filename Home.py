@@ -20,7 +20,7 @@ if 'NodeLocations' not in st.session_state:
                                                     sep=";", index_col=0)
 if 'Summary2030' not in st.session_state:
     st.session_state['Summary2030'] = pd.read_excel("./data/Summary_2030.xlsx")
-if 'Summary2030' not in st.session_state:
+if 'Summary2040' not in st.session_state:
     st.session_state['Summary2040'] = pd.read_excel("./data/Summary_2040.xlsx")
 if 'HeaderKeys' not in st.session_state:
     st.session_state['HeaderKeys'] = pd.read_excel("./data/HeaderKeys.xlsx")
