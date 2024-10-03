@@ -13,24 +13,17 @@ from utilities import *
 # import sys
 
 # Session States
-if 'Result1' not in st.session_state:
-    st.session_state['Result1'] = {}
-if 'NodeLocations' not in st.session_state:
-    st.session_state['NodeLocations'] = pd.read_csv("./data/Node_Locations.csv",
-                                                    sep=";", index_col=0)
-if 'Summary2030' not in st.session_state:
-    st.session_state['Summary2030'] = pd.read_excel("./data/Summary_2030.xlsx")
-if 'Summary2040' not in st.session_state:
-    st.session_state['Summary2040'] = pd.read_excel("./data/Summary_2040.xlsx")
-if 'HeaderKeys' not in st.session_state:
-    st.session_state['HeaderKeys'] = pd.read_excel("./data/HeaderKeys.xlsx")
+load_cash()
+
 # Page Setup
 st.set_page_config(
     page_title="Home",
 )
 
 # Show cash status
-show_sidebar()
+# show_sidebar()
 
 st.write("Welcome to the visualization platform of the paper PAPERNAME! 👋")
-st.write("Select an option on the left.")
+st.write("On the page 'Compare Scenarios' you can compare the results for the 2030 "
+         "and 2040 scenarios for selected variables. On the page 'Download Data', "
+         "you can download the aggregated results for the two years")
