@@ -1,6 +1,5 @@
 import streamlit as st
 from pathlib import Path
-import pyzenodo3
 import requests
 
 from utilities import *
