@@ -1,5 +1,7 @@
 import streamlit as st
 from pathlib import Path
+import pyzenodo3
+import requests
 
 from utilities import *
 
@@ -9,21 +11,18 @@ st.set_page_config(
 )
 
 # Load Data
-if not st.session_state['Result1']:
+load_cash()
+show_sidebar()
+if not st.session_state['Result']:
     load_data_in_cash()
 
-# Show cash status
-st.sidebar.markdown('**Cash Status**')
-show_sidebar()
-st.sidebar.markdown("---")
 
-if st.session_state['Result1']:
+if st.session_state['Result']:
     # Page to show
-    st.sidebar.markdown('**Graph**')
     pages_available = ["Technology Design", "Network Design",
                        "Energy Balance at Node",
                        "Technology Operation", "Network Operation"]
-    selected_page = st.sidebar.selectbox("Select graph", pages_available)
+    selected_page = st.selectbox("Select graph", pages_available)
 
     # Individual pages
     if selected_page == "Technology Design":

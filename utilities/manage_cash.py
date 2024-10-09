@@ -8,18 +8,19 @@ def show_sidebar():
     """
     Shows cash status and button in sidebar
     """
-    clear_cash()
     show_cash_status()
+    if st.session_state['Result']:
+        clear_cash()
 
 def show_cash_status():
     """
     Displays the cash status
     :return:
     """
-    if st.session_state['Result1']:
-        st.sidebar.success("Results 1 successfully loaded")
+    if st.session_state['Result']:
+        st.sidebar.success("Results successfully loaded")
     else:
-        st.sidebar.error("Results 1 not loaded")
+        st.sidebar.error("Results not loaded")
 
 def clear_cash():
     """
@@ -27,21 +28,21 @@ def clear_cash():
     :return:
     """
     if st.sidebar.button('Reset data'):
-        st.session_state['Result1'] = {}
+        st.session_state['Result'] = {}
 
 def load_data_in_cash():
     """
     Loads results into cash
     :return:
     """
-    st.markdown("**Load result file**")
-    uploaded_h5 = st.file_uploader("Load a result h5 file")
+    st.markdown("**Load result file from Zenodo repository**")
+    uploaded_h5 = st.file_uploader("")
     if uploaded_h5 is not None:
-        st.session_state['Result1'] = read_results_from_h5(uploaded_h5)
+        st.session_state['Result'] = read_results_from_h5(uploaded_h5)
 
 def load_cash():
-    if 'Result1' not in st.session_state:
-        st.session_state['Result1'] = {}
+    if 'Result' not in st.session_state:
+        st.session_state['Result'] = {}
     if 'NodeLocations' not in st.session_state:
         st.session_state['NodeLocations'] = pd.read_csv("./data/Node_Locations.csv",
                                                         sep=";", index_col=0)

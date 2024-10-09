@@ -49,18 +49,18 @@ export_csv(
 #     "This page allows to download data as csv files. Note that always data from the first result is used."
 # )
 #
-# if st.session_state["Result1"]:
+# if st.session_state["Result"]:
 #
 #     st.header("Technologies")
 #     st.subheader("Technology Design")
 #     export_csv(
-#         st.session_state["Result1"]["technology_design"],
+#         st.session_state["Result"]["technology_design"],
 #         "Download Technology Design as CSV",
 #         "technology_design.csv",
 #     )
 #
 #     st.subheader("Technology Operation")
-#     tec_operation = st.session_state["Result1"]["technology_operation"]
+#     tec_operation = st.session_state["Result"]["technology_operation"]
 #     nodes = list(tec_operation.columns.get_level_values("Node").unique())
 #     nodes.insert(0, "All")
 #     selected_node = st.selectbox("Node Selection", nodes)
@@ -84,12 +84,12 @@ export_csv(
 #     st.header("Networks")
 #     st.subheader("Network Design")
 #     export_csv(
-#         st.session_state["Result1"]["network_design"],
+#         st.session_state["Result"]["network_design"],
 #         "Download Network Design as CSV",
 #         "network_design.csv",
 #     )
 #     st.subheader("Network Operation")
-#     net_operation = st.session_state["Result1"]["network_operation"]
+#     net_operation = st.session_state["Result"]["network_operation"]
 #     networks = list(net_operation.columns.get_level_values("Network").unique())
 #     networks.insert(0, "All")
 #     selected_network = st.selectbox("Network Selection", networks)
@@ -100,7 +100,7 @@ export_csv(
 #     )
 #
 #     st.header("Energybalance")
-#     e_balance = st.session_state["Result1"]["energybalance"]
+#     e_balance = st.session_state["Result"]["energybalance"]
 #     carriers = list(e_balance.columns.get_level_values("Carrier").unique())
 #     carriers.insert(0, "All")
 #     selected_carrier = st.selectbox("Carrier Selection", carriers)

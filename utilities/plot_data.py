@@ -51,7 +51,7 @@ def plot_technology_design():
     """
     Plots the technology design
     """
-    data = st.session_state['Result1']['technology_design']
+    data = st.session_state['Result']['technology_design']
     data = data[data['Variable']!= 'technology']
 
     with st.form('PlottingOptions'):
@@ -82,7 +82,7 @@ def plot_energy_balance():
     """
     Plots the energy balance
     """
-    data = st.session_state['Result1']['energybalance']
+    data = st.session_state['Result']['energybalance']
 
     with st.form('PlottingOptions'):
         carriers = data.columns.get_level_values('Carrier').unique()
@@ -138,7 +138,7 @@ def plot_technology_operation():
     """
     Plots technology operation
     """
-    data = st.session_state['Result1']['technology_operation']
+    data = st.session_state['Result']['technology_operation']
 
     nodes = data.columns.get_level_values('Node').unique()
     selected_node = st.selectbox('**Node Selection**', nodes)
@@ -195,7 +195,7 @@ def plot_technology_operation():
 
 
 def plot_network_design():
-    data = st.session_state['Result1']['network_design']
+    data = st.session_state['Result']['network_design']
 
     with st.form('PlottingOptions'):
         networks_available = list(data['Network'].unique())
@@ -261,7 +261,7 @@ def plot_network_design():
 
 
 def plot_network_operation():
-    data = st.session_state['Result1']['network_operation']
+    data = st.session_state['Result']['network_operation']
 
     networks = data.columns.get_level_values('Network').unique()
     selected_network = st.multiselect('**Network Selection**', networks)
