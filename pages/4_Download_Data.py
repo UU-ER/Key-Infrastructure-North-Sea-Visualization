@@ -1,7 +1,8 @@
-import streamlit as st
-from pathlib import Path
+import streamlit
 
 from utilities import *
+from utilities.process_data import export_csv
+
 load_cash()
 
 # Page Setup
@@ -9,27 +10,8 @@ st.set_page_config(
     page_title="Download Data",
 )
 
-# Show cash status
-# st.sidebar.markdown("Cash Status")
-# show_sidebar()
-# st.sidebar.markdown("---")
-
-
-def export_csv(df, label, filename):
-    """
-    Makes a button that allows for csv export
-    :param df: dataframe to export
-    :param label: label of button
-    :param filename: filename to export
-    :return:
-    """
-    excel_buffer = df.to_csv(index=False)
-    st.download_button(
-        label=label,
-        data=excel_buffer,
-        file_name=filename,
-        mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
-    )
+st.header("Download results")
+st.markdown("Here you can download the aggregated results for 2030 and 2040:")
 
 export_csv(
     st.session_state['Summary2030'],

@@ -23,9 +23,19 @@ st.set_page_config(
 # Show cash status
 # show_sidebar()
 
-st.write("Welcome to the visualization platform of the paper PAPERNAME! 👋")
+st.subheader("Welcome to the visualization platform of the paper PAPERNAME! 👋")
+st.write("The paper explores the role of electricity grids, energy storage and "
+         "hydrogen infrastructure in the North Sea region towards 2030 and 2040. This"
+         "website visualizes interactively the results of the optimizations as well"
+         "as a more detailed scenario comparison.")
+
+st.write("Add link to paper")
+
 st.write("On the page 'Compare Scenarios' you can compare the results for the 2030 "
          "and 2040 scenarios for selected variables. On the page 'Download Data', "
          "you can download the aggregated results for the two years. In 'Visualize "
          "Single Results', you can upload an h5 file available on Zenodo (ADD LINK) "
          "to visualize the design and operation of a single scenario.")
+
+st.subheader("Abstract of the paper")
+st.write("ABSTRACT")

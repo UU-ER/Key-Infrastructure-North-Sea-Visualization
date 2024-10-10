@@ -6,8 +6,10 @@ from utilities import *
 
 # Page Setup
 st.set_page_config(
-    page_title="Visualize Single Result",
+    page_title="Visualize Single Run",
 )
+
+st.header("Visualize single run")
 
 # Load Data
 load_cash()
@@ -17,6 +19,8 @@ if not st.session_state['Result']:
 
 
 if st.session_state['Result']:
+    st.markdown("**Scenario shown: " + st.session_state['ScenariosName']+"**")
+
     # Page to show
     pages_available = ["Technology Design", "Network Design",
                        "Energy Balance at Node",

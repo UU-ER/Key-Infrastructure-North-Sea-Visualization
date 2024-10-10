@@ -36,9 +36,14 @@ def load_data_in_cash():
     :return:
     """
     st.markdown("**Load result file from Zenodo repository**")
+    st.write("LINK")
     uploaded_h5 = st.file_uploader("")
     if uploaded_h5 is not None:
         st.session_state['Result'] = read_results_from_h5(uploaded_h5)
+        st.session_state['ScenariosName'] = uploaded_h5.name.replace("_", " ").replace(
+            ".h5",
+                                                                              "")
+
 
 def load_cash():
     if 'Result' not in st.session_state:

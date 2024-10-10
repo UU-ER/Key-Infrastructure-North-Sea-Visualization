@@ -2,8 +2,8 @@ import os
 import shutil
 import pandas as pd
 
-year = "2030"
-root = "//ad.geo.uu.nl/Users/StaffUsers/6574114/EhubResults/MES NorthSea/baseline_demand_v6"
+year = "2040"
+root = "//ad.geo.uu.nl/Users/StaffUsers/6574114/EhubResults/MES NorthSea/2040_demand_v6_simplifiedgrids"
 results = pd.read_csv("./data/Summary_"+year+".csv", sep=";")
 destination_dir = ("//ad.geo.uu.nl/Users/StaffUsers/6574114/EhubResults/MES "
                    "NorthSea/00_FinalResults")
