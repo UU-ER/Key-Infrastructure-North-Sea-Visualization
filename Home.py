@@ -34,6 +34,6 @@ st.write("The paper explores the role of electricity grids, energy storage and "
 st.write("On the page 'Compare Scenarios' you can compare the results for the 2030 "
          "and 2040 scenarios for selected variables. On the page 'Download Data', "
          "you can download the aggregated results for the two years. In 'Visualize "
-         "Single Results', you can upload an h5 file available on Zenodo (ADD LINK) "
+         "Single Results', you can upload an h5 file available on [Zenodo](https://zenodo.org/records/14336316) "
          "to visualize the design and operation of a single scenario.")
 
