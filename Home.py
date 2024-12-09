@@ -23,7 +23,9 @@ st.set_page_config(
 # Show cash status
 # show_sidebar()
 
-st.subheader("Welcome to the visualization platform of the paper PAPERNAME! 👋")
+st.subheader("Welcome to the visualization platform of the paper ""Unlocking the green "
+             "power of the North Sea: Identifying key energy infrastructure synergies "
+             "for 2030 and 2040""! 👋")
 st.write("The paper explores the role of electricity grids, energy storage and "
          "hydrogen infrastructure in the North Sea region towards 2030 and 2040. This"
          "website visualizes interactively the results of the optimizations as well"
@@ -37,5 +39,3 @@ st.write("On the page 'Compare Scenarios' you can compare the results for the 20
          "Single Results', you can upload an h5 file available on Zenodo (ADD LINK) "
          "to visualize the design and operation of a single scenario.")
 
-st.subheader("Abstract of the paper")
-st.write("ABSTRACT")
